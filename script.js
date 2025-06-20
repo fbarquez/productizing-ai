@@ -1,4 +1,9 @@
 
+document.getElementById('languageToggle').addEventListener('click', () => {
+  const el = document.getElementById('google_translate_element');
+  el.style.display = (el.style.display === 'none' || !el.style.display) ? 'block' : 'none';
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   const dateTime = document.getElementById("dateTime");
   const updateClock = () => {
