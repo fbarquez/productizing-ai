@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Productizing AI - Interactive</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 <body>
+  <div id="google_translate_element"></div>
   <div id="dateTime"></div>
   <div id="particles-js"></div>
   <section id="cover" class="active">
@@ -15,14 +17,69 @@
     <p style="font-size: 1.2em; background-color: rgba(0, 0, 0, 0.5); padding: 0.5em 1em; border-radius: 10px; margin-top: 0.5em;">From Model to Market</p>
     <div id="authorInfo" title="Created by: Fernando Barriga Vasquez">ℹ️</div>
     <div id="nextArrow" title="Click or swipe to start">
-      <span style="font-size: 1.2em; display: block; transform: none;">Click or Tap to Start →</span>
+      <span style="font-size: 1.2em; display: block; transform: none;">Click or Press → to Start →</span>
     </div>
   </section>
 
-  <!-- Add more <section> elements here for other slides -->
+  <section>
+    <h2>What is Productizing AI?</h2>
+    <p>Transforming AI models into real-world applications that deliver user value, scalability, and business outcomes.</p>
+  </section>
+
+  <section>
+    <h2>Why It Matters</h2>
+    <ul>
+      <li>Bridges the gap between research and product</li>
+      <li>Enables monetization of AI capabilities</li>
+      <li>Ensures responsible and ethical deployment</li>
+    </ul>
+  </section>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-  <script src="script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const dateTime = document.getElementById("dateTime");
+      const updateClock = () => {
+        const now = new Date();
+        const options = { dateStyle: 'medium', timeStyle: 'short' };
+        dateTime.textContent = now.toLocaleString(undefined, options);
+      };
+      updateClock();
+      setInterval(updateClock, 60000);
+    });
+
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        includedLanguages: 'en,zh-CN,es,fr,de,ar,pt,ru',
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+
+    particlesJS.load('particles-js', 'https://cdn.jsdelivr.net/gh/VincentGarreau/particles.js@master/demo/particles.json');
+
+    const sections = document.querySelectorAll('section');
+    let currentIndex = 0;
+
+    function showSectionByIndex(index) {
+      sections.forEach((s, i) => s.classList.toggle('active', i === index));
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') {
+        currentIndex = (currentIndex + 1) % sections.length;
+        showSectionByIndex(currentIndex);
+      } else if (e.key === 'ArrowLeft') {
+        currentIndex = (currentIndex - 1 + sections.length) % sections.length;
+        showSectionByIndex(currentIndex);
+      }
+    });
+
+    document.getElementById('nextArrow').addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % sections.length;
+      showSectionByIndex(currentIndex);
+    });
+  </script>
 </body>
 </html>

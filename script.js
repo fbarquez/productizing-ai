@@ -10,6 +10,15 @@ document.addEventListener("DOMContentLoaded", () => {
   setInterval(updateClock, 60000);
 });
 
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+    includedLanguages: 'en,zh-CN,es,fr,de,ar,pt,ru',
+    autoDisplay: false
+  }, 'google_translate_element');
+}
+
 particlesJS.load('particles-js', 'https://cdn.jsdelivr.net/gh/VincentGarreau/particles.js@master/demo/particles.json');
 
 const sections = document.querySelectorAll('section');
