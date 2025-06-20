@@ -1,8 +1,20 @@
 
-function showSection(id) {
-  document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
+const sections = document.querySelectorAll('section');
+let currentIndex = 0;
+
+function showSectionByIndex(index) {
+  sections.forEach((s, i) => s.classList.toggle('active', i === index));
 }
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight') {
+    currentIndex = (currentIndex + 1) % sections.length;
+    showSectionByIndex(currentIndex);
+  } else if (e.key === 'ArrowLeft') {
+    currentIndex = (currentIndex - 1 + sections.length) % sections.length;
+    showSectionByIndex(currentIndex);
+  }
+});
 
 const ctx1 = document.getElementById('chart1').getContext('2d');
 new Chart(ctx1, {
