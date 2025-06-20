@@ -1,74 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Productizing AI - Interactive</title>
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div id="dateTime"></div>
+  <div id="particles-js"></div>
   <section id="cover" class="active">
     <h1>Productizing AI</h1>
-    <p>Created by: Your Name<br>Press → to begin the experience</p>
+    <p style="font-size: 1.2em; background-color: rgba(0, 0, 0, 0.5); padding: 0.5em 1em; border-radius: 10px; margin-top: 0.5em;">From Model to Market</p>
+    <div id="authorInfo" title="Created by: Fernando Barriga Vasquez">ℹ️</div>
+    <div id="nextArrow" title="Click or swipe to start">
+      <span style="font-size: 1.2em; display: block; transform: none;">Click or Tap to Start →</span>
+    </div>
   </section>
 
-  <section id="intro">
-    <h2>Productizing AI</h2>
-    <p>Presented by: Your Name<br>Course: Product Management<br>University: Your University<br>Date: June 2025</p>
-    <p><strong>Objective:</strong> Understand how to turn powerful AI models into real, usable, and valuable products for users.</p>
-  </section>
-
-  <section id="what">
-    <h2>What Does It Mean to Productize AI?</h2>
-    <ul>
-      <li>A model ≠ a product</li>
-      <li>A product = AI + UX + Infrastructure + Value</li>
-      <li>It transforms research into real-world use</li>
-    </ul>
-  </section>
-
-  <section id="principles">
-    <h2>Three Core Principles</h2>
-    <ol>
-      <li><strong>Product–Problem Fit:</strong> Solves a real need and fits into the user journey</li>
-      <li><strong>UX and Explainability:</strong> Clear and trustworthy experiences</li>
-      <li><strong>Infrastructure and Feedback:</strong> Scalable and self-improving systems</li>
-    </ol>
-  </section>
-
-  <section id="examples">
-    <h2>Examples of AI Products</h2>
-    <ul>
-      <li><strong>Grammarly:</strong> Contextual writing assistance</li>
-      <li><strong>ChatGPT:</strong> Conversational and natural AI interface</li>
-      <li><strong>Spotify:</strong> Personalized music experience</li>
-    </ul>
-  </section>
-
-  <section id="charts">
-    <h2>Adoption of AI Products</h2>
-    <canvas id="chart1" width="500" height="300"></canvas>
-    <h2 style="margin-top:2em;">What Matters Most in AI Products?</h2>
-    <canvas id="chart2" width="500" height="300"></canvas>
-  </section>
-
-  <section id="challenges">
-    <h2>Challenges in Productizing AI</h2>
-    <ul>
-      <li>Lack of explainability → user distrust</li>
-      <li>Bias in data → unfair outcomes</li>
-      <li>Complex integration → higher dev cost</li>
-      <li>Low adoption → weak UX</li>
-    </ul>
-  </section>
-
-  <section id="reflection">
-    <h2>Reflection</h2>
-    <blockquote>"AI is not the product. The product is what AI enables."</blockquote>
-    <p>This project helped me realize the importance of design, trust, and clarity when creating products powered by AI.</p>
-  </section>
+  <!-- Add more <section> elements here for other slides -->
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
